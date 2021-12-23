@@ -1,18 +1,19 @@
 var img = new Image();
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-img.src = '/DotOnPng/2021-12-20-01-59-21/image.png';
+var dir = '2021-12-23-17-46-59'
+img.src = dir + '/image.png';
 console.log(img.width)
 console.log(img.height)
 var clr 
 img.onload = function() {
    
   draw(this);
-  readTextFile("2021-12-20-01-59-21/face_contourscolors.json", function(colors){
+  readTextFile("face_contourscolors.json", function(colors){
     clr = JSON.parse(colors);
 console.log(clr)
   })
-  readTextFile("2021-12-20-01-59-21/face_contours.json", function(text){
+  readTextFile(dir + "/face_contours.json", function(text){
     var data = JSON.parse(text);
   
     console.log(data);
