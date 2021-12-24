@@ -19,6 +19,6 @@
     "MOUTH_LEFT":"#000000",
     "MOUTH_RIGHT":"#000000",
     "NOSE_BASE":"#000000",
-    "RIGHT_EAR":"#FF00FF"
-
+    "RIGHT_EAR":"#FF00FF",
+    "TEST":"#2200FF"
 }
