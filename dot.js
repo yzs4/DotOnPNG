@@ -1,7 +1,7 @@
 var img = new Image();
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var dir = '2021-12-23-17-46-59'
+var dir = '2021-12-20-01-59-21'
 img.src = dir + '/image.png';
 console.log(img.width)
 console.log(img.height)
@@ -28,8 +28,23 @@ console.log(clr)
     
     // dot(ctx, 100, 100, "red")
   });
+  readTextFile(dir + "/face_landmarks.json", function(dots){
+    var datas = JSON.parse(dots);
   
+    console.log(datas);
+    
+    for ( i in datas ){
+
+        dot(ctx, datas[i].x, datas[i].y, clr[i])
+
+      
+    }
+
+    
+    // dot(ctx, 100, 100, "red")
+  });
 };
+
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json");
