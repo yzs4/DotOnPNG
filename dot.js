@@ -3,6 +3,8 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var dir = '2021-12-20-01-59-21'
 img.src = dir + '/image.png';
+document.getElementById('viewer').window = dir;
+console.log(document.getElementById('viewer').document)
 console.log(img.width)
 console.log(img.height)
 var clr 
@@ -26,7 +28,7 @@ console.log(clr)
     }
 
     
-    // dot(ctx, 100, 100, "red")
+   
   });
   readTextFile(dir + "/face_landmarks.json", function(dots){
     var datas = JSON.parse(dots);
@@ -41,7 +43,7 @@ console.log(clr)
     }
 
     
-    // dot(ctx, 100, 100, "red")
+    
   });
 };
 
@@ -57,15 +59,7 @@ function readTextFile(file, callback) {
   rawFile.send(null);
 }
 
-// function drawcontour(){
-//     var canvas = document.getElementById('canvas');
-//     var ctx = canvas.getContext('2d');
-    
-//     dot(ctx, 555, 500, 'red')
-// //     for (var i in data.FACE) {
-        
-// // dot(ctx, data.FACE[i].x+125, data.FACE[i].y+90, 'red')}
-// }
+
 
 function draw(img) {
   console.trace()
@@ -83,4 +77,4 @@ function dot(ctx, x, y, color){
     ctx.fill(circle);
     
 }
-  
+  console.log(dir)
