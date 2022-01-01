@@ -17,13 +17,18 @@ console.log(clr)
   })
   readTextFile(dir + "/face_contours.json", function(text){
     var data = JSON.parse(text);
-  
+    var tt = '15'
+    var hz = ""
     console.log(data);
     console.log(data.FACE[0])
     for ( j in data ){
       for ( i in data[j]){
+        if ( hz !== data[j] ){
         dot(ctx, data[j][i].x, data[j][i].y, clr[j])
-
+        }
+      else ( hz === data[j])
+        lightless(ctx, data[j][tt].x, data[j][tt].y, "purple")
+        
       }
     }
 
@@ -77,4 +82,11 @@ function dot(ctx, x, y, color){
     ctx.fill(circle);
     
 }
+function lightless(ctx, x, y, color){
+  var circles = new Path2D();
+    circles.arc(x, y, 4, 2, 2 * Math.PI);
+    ctx.fillStyle = color
+    ctx.fill(circles);
+}
+
   console.log(dir)
